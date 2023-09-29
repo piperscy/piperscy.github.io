@@ -1,0 +1,169 @@
+/* PROBLEM 1: Remove white margin of body, html */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+#navbar {
+  display: flex;
+  justify-content: flex-end; /* Right-align content */
+  align-items: center; /* Center vertically */
+}
+
+.navbar-item {
+  margin-left: 10px; /* Add spacing between items */
+}
+
+/* PROBLEM 2: Select profile picture and make it round */
+/* YOUR CODE HERE */
+#profile-pic img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+/* PROBLEM 3: Flesh our your follow button! 5 px for the
+top and bottom, 30 for the left and right*/
+#follow-button {
+    padding: 5px 30px;
+  }
+/* PROBLEM 4: Turn items into a square, 120x120 px image */
+/* PROBLEM 5: Create a 10 px horizontal space between items */
+.item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  #pictures {
+    display: grid;
+    grid-template-columns: repeat(3, 120px); /* 3 columns with equal width */
+    gap: 10px;
+  }
+/* PROBLEM 6: Create a 10px vertical space between rows */
+.row {
+    margin-bottom: 10px;
+}
+
+/* PROBLEM 7: Add 20px of space between each navigation item */
+#navbar .navbar-item {
+    margin-right: 20px;
+}
+
+/* PROBLEM 8: Create a hover effect, so that items will have
+full opacity when hovered over! It should also have a
+transition period of 0.2 seconds*/
+.item:hover {
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+/* PROBLEM 9: Add a click effect to the follow button, so
+the font becomes size 18 px when clicked on - as a result, the button will become
+larger when clicked on!*/
+#follow-button {
+    padding: 5px 30px;
+    transition: font-size 0.2s, transform 0.2s;
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border: none;
+    cursor: pointer; 
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  #follow-button:active {
+    font-size: 8px;
+    transform: scale(1.1);
+  }
+/* PROBLEM 10: Add a hover effect such that the text of the
+navigation has an opacity of 1 when hovered over!*/
+.navbar-item:hover {
+    opacity: 0.1
+    transition: opacity 0.2s;
+  }
+
+/* PROBLEM 11: In one selection, make the follow button, picture
+items, and nav bar items have a pointer cursor */
+#follow-button, .item, .navbar-item {
+    cursor: pointer;
+  }
+/* Move design to the bottom */
+#design {
+  order: 2; /* Set a higher order value to move it below */
+}
+
+#content {
+  /* Your existing content styles go here */
+  order: 1; /* Set a lower order value to place it above */
+}
+
+
+  #design {
+    margin-top: auto; /* Push the link to the bottom */
+    margin-bottom: 20px; /* Add spacing between the link and the content */
+}
+
+#header {
+  display: flex;
+  justify-content: space-around; /* Distribute space evenly between items */
+  align-items: center; /* Vertically center items */
+}
+
+#profile-pic {
+  flex-shrink: 0; /* Prevent the image from shrinking */
+  width: 20%;
+}
+
+#header {
+    display: flex;
+    align-items: center; /* Vertically center items */
+}
+
+#profile-pic {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    margin-right: 10px; /* Add spacing between the image and text */
+}
+
+#information {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+
+#username {
+    font-weight: bold;
+    display: flex; /* Stack username and follow button horizontally */
+    align-items: center; /* Vertically center items within the username container */
+}
+
+#follow-button {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    margin-left: 10px;
+}
+
+#about {
+    /* Add any necessary styles for the "about" text */
+    margin-top: 10px; /* Add spacing between "about" and the above content */
+}
+
+
+
