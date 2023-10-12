@@ -1,0 +1,57 @@
+.nav{
+    /* [Problem 1] 
+        FIXME: Set the width of the nav class to 85px. */
+    width: 85px;
+}
+.nav--button{
+    /*  [Problem 2]
+        FIXME: Initialize flexbox vertically. Align the text and icons so that they
+        are center aligned. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dashboard{
+    /*  [Problem 3]
+        FIXME: Add some breathing room! The dashboard portion is a bit tight! 
+        (Hint: use padding!) */
+    padding: 20px;
+}
+.dashboard--title {
+    display: flex; /* Initialize flexbox */
+    justify-content: center; /* Center-align items horizontally */
+    align-items: center; /* Center-align items vertically */
+}
+
+.dashboard--classes {
+    display: flex; /* Initialize flexbox */
+    flex-wrap: wrap; /* Make the classes wrap in a 3x2 setup */
+    justify-content: space-between; /* Create equal spacing between each box */
+}
+.dashboard--classes__box{
+    width: 31.5%;
+    margin-bottom: 35px;
+    /*  [Problem 6]
+        FIXME: Set the widths of each class tab to be 31.5% of the width;
+
+        [Problem 7]
+        FIXME: Add 35px to the space under each box. (Choose carefully!) */       
+}
+.dashboard--classes__box:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35); /* Add a shadow when the class tab is hovered */
+}
+
+.dashboard--classes__box__image {
+    border-top-left-radius: 5px; /* Add border-radius to the top left corner */
+    border-top-right-radius: 5px; /* Add border-radius to the top right corner */
+}
+
+h2:hover, h3:hover, h4:hover {
+    text-decoration: underline; /* Add an underline on hover */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+
+.notifications__notifs .notifications__notifs--box {
+    display: flex; /* Initialize flexbox */
+    align-items: center; /* Align the announcement icon and the text box */
+}
