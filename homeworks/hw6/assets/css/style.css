@@ -1,0 +1,232 @@
+/* -- LOADING ANIMATIONS -- */
+/* Loader one: Pulse */
+.loader.one {
+	width: 100px;
+	height: 100px;
+}
+
+.loader.one .circle {
+	height: 100px;
+	width: 100px;
+	background: #E427F9;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 50px;
+	/* TODO: PART 1.2 - Add pulse animation */
+	animation: pulseAnimation 2s infinite;
+}
+
+/* TODO: PART 1.3 - Delay pulse animation for circle two */
+.loader.one .circle.second {
+	animation-delay: 1s;
+}
+/* TODO: PART 1.1 - Create pulse animation */
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+/* Loader two: Wave */
+.loader.two {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 110px;
+}
+
+.loader.two .dot {
+	height: 30px;
+	width: 30px;
+	background: #000;
+	border-radius: 15px;
+	background: #F76A4D;
+	/* TODO: PART 2 - Add wave animation */
+	animation: waveAnimation 1.5s infinite;
+}
+
+/* TODO: PART 2 - Add delays and dot colors */
+.loader.two .dot:nth-child(2) {
+    animation-delay: 0.25s;
+    background: #4DB1F7;
+}
+
+.loader.two .dot:nth-child(3) {
+    animation-delay: 0.5s;
+    background: #7DE76A;
+}
+
+/* TODO: PART 2 - Create wave animation */
+@keyframes waveAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-15px); /* First dot moves up */
+    }
+    50% {
+        transform: translateY(0); /* Second dot moves up */
+    }
+    75% {
+        transform: translateY(-15px); /* Third dot moves up */
+    }
+}
+
+.loader.two .dot {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    animation: waveAnimation 2s infinite;
+}
+
+/* Loader three: Flip */
+
+.loader.three .flip-card {
+    width: 100px;
+    height: 100px;
+    background-color: #F98527;
+    perspective: 300px;
+}
+
+.loader.three .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.loader.three .flip-card-front,
+.loader.three .flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.loader.three .flip-card-back {
+    background: #000;
+    transform: rotateY(180deg) rotateX(180deg);
+}
+
+/* PART 3 - Add flip animation to flip card */
+@keyframes flipAnimation {
+    0% {
+        transform: perspective(300px) rotateY(0deg) rotateX(0deg);
+    }
+    50% {
+        transform: perspective(300px) rotateY(180deg) rotateX(0deg);
+    }
+    100% {
+        transform: perspective(300px) rotateY(180deg) rotateX(180deg);
+    }
+}
+
+/* PART 3 - Apply the animation to our tile */
+.loader.three .flip-card {
+    animation: flipAnimation 2.6s infinite;
+}
+/* Loader four: Spin */
+.loader.four .rings {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.loader.four .ring {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+.loader.four .ring.two {
+    width: 80%;
+    height: 80%;
+}
+.loader.four .ring.three {
+    width: 60%;
+    height: 60%;
+}
+
+.loader.four .ring .mask {
+    width: 93%;
+    height: 93%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #E5F1F7;
+}
+
+.loader.four .ring .arc-container {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    left: 10%;
+    overflow: hidden;
+    transform-origin: 50% 50%;
+    /* PART 4 - Add spin animation */
+    animation: spinAnimation 4s linear infinite;
+}
+
+/* PART 4 - Add spin shifts for other rings */
+.loader.four .ring.two .arc-container {
+    animation: spinAnimation 4s linear -0.2s infinite; /
+}
+.loader.four .ring.three .arc-container {
+    animation: spinAnimation 4s linear -0.1s infinite;
+}
+
+.loader.four .ring .arc {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background: #10D4C6;
+    /* PART 4 - Add color animation */
+    animation: spinColorAnimation 4.4s infinite;
+}
+
+/* PART 4 - Add spin color shifts for other rings */
+.loader.four .ring.two .arc {
+    animation: spinColorAnimation 4.4s reverse infinite;
+}
+.loader.four .ring.three .arc {
+    animation: spinColorAnimation 4.4s infinite;
+}
+
+/* PART 4 - Create spin animation */
+@keyframes spinAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* PART 4 - Create spin color animation */
+@keyframes spinColorAnimation {
+    0%, 25% {
+        background: #10D4C6;
+    }
+    25%, 50% {
+        background: #3068CD;
+    }
+    50%, 75% {
+        background: #7910D4;
+    }
+    75%, 100% {
+        background: #41EA97;
+    }
+}
